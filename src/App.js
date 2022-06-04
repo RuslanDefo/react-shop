@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {Card} from './components/Card'
+import {Header} from "./components/Header";
+import {Drawer} from "./components/Drawer";
+
+const arr = [
+    {name: 'Abibas обыкновенный', price: 1500},
+    {name: 'Abibas необыкновенный', price: 3500},
+    {name: 'Abibas загадочный', price: 7200},
+]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="wrapper clear">
+            <Drawer/>
+            <Header/>
+            <div className="content p-40">
+                <h1 className="mb-40">Все кроссовки</h1>
+
+                <div className="d-flex">
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                    <Card/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
