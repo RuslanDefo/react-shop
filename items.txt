@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Abibas обыкновенный",
+    "price": 1500,
+    "imageUrl": "/img/sneakers/1.jpg"
+  },
+  {
+    "name": "Abibas необыкновенный",
+    "price": 3500,
+    "imageUrl": "/img/sneakers/2.jpg"
+  },
+  {
+    "name": "Abibas бомжацкий",
+    "price": 1500,
+    "imageUrl": "/img/sneakers/3.jpg"
+  },
+  {
+    "name": "Abibas волшебный",
+    "price": 3500,
+    "imageUrl": "/img/sneakers/4.jpg"
+  },
+  {
+    "name": "Abibas китайский",
+    "price": 2300,
+    "imageUrl": "/img/sneakers/5.jpg"
+  },
+  {
+    "name": "Abibas оригинальный",
+    "price": 3500,
+    "imageUrl": "/img/sneakers/6.jpg"
+  },
+  {
+    "name": "Abibas загадочный",
+    "price": 1500,
+    "imageUrl": "/img/sneakers/7.jpg"
+  },
+  {
+    "name": "Abibas сногсшибательный",
+    "price": 2900,
+    "imageUrl": "/img/sneakers/8.jpg"
+  },
+  {
+    "name": "Abibas головокружительный",
+    "price": 11400,
+    "imageUrl": "/img/sneakers/6.jpg"
+  },
+  {
+    "name": "Abibas босяцкий",
+    "price": 3200,
+    "imageUrl": "/img/sneakers/9.jpg"
+  },
+  {
+    "name": "Abibas так себе",
+    "price": 7500,
+    "imageUrl": "/img/sneakers/10.jpg"
+  }
+
+]
