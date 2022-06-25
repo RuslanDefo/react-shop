@@ -20,7 +20,7 @@ export function Card({title, imageUrl, price, onFavorite, onPlus}) {
             <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column">
                     <span>Цена:</span>
-                    <b>{price}</b>
+                    <b>{price} рубасов</b>
                 </div>
                     <img
                         className={cardStyles.plus}
