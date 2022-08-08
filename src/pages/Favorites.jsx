@@ -1,7 +1,9 @@
 import React from 'react';
+import {Card} from "../components/Card/Card";
 
 
-export function Favorites() {
+export function Favorites({items, onAddFavorite}) {
+
     return (
         <div className="content p-40">
             <div className="d-flex align-center justify-between mb-40">
@@ -10,7 +12,15 @@ export function Favorites() {
             </div>
 
             <div className="d-flex flex-wrap">
-          Будут закладки
+                {items
+                    .map((obj, index) => (
+                        <Card
+                            key={index}
+                            favorited={true}
+                            onFavorite={onAddFavorite}
+                            {...obj}
+                        />
+                    ))}
             </div>
         </div>
     );

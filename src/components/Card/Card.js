@@ -1,19 +1,19 @@
 import cardStyles from './Card.module.scss'
 import React from "react";
 
-export function Card({title, imageUrl, price, onFavorite, onPlus}) {
+export function Card({id, name, imageUrl, price, onFavorite, onPlus, favorited=false}) {
 
     let [added, setAdded] = React.useState();
-    let [isFavorite, setIsFavorite] = React.useState();
+    let [isFavorite, setIsFavorite] = React.useState(favorited);
 
     const onAdd = () => {
-        onPlus({title, imageUrl, price});
+        onPlus({name, imageUrl, price});
         setAdded(!added)
     }
 
 
     const onClickFavorite = () => {
-        onFavorite({title, imageUrl, price});
+        onFavorite({id, name, imageUrl, price});
         setIsFavorite(!isFavorite)
     }
 
@@ -23,7 +23,7 @@ export function Card({title, imageUrl, price, onFavorite, onPlus}) {
                 <img src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
             </div>
             <img width={133} height={112} src={imageUrl} alt="Sneakers"  alt="sneakers"/>
-            <h5>{title}</h5>
+            <h5>{name}</h5>
             <div className="d-flex justify-between align-center">
                 <div className="d-flex flex-column">
                     <span>Цена:</span>
@@ -35,6 +35,7 @@ export function Card({title, imageUrl, price, onFavorite, onPlus}) {
                         alt="Plus"onClick={onAdd}/>
             </div>
         </div>
+
     );
 }
 

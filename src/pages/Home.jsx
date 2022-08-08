@@ -7,7 +7,7 @@ export function Home({
                          setSearchValue,
                          onChangeSearchInput,
                          onAddToCart,
-                         onAddFavorite
+                         onAddFavorite,
                      }) {
     return (
         <div className="content p-40">
@@ -28,11 +28,9 @@ export function Home({
                     .map((obj, index) => (
                         <Card
                             key={index}
-                            title={obj.name}
-                            price={obj.price}
-                            imageUrl={obj.imageUrl}
                             onPlus={(item) => onAddToCart(item)}
                             onFavorite={(obj) => onAddFavorite(obj)}
+                            {...obj}
                         />
                     ))}
             </div>
