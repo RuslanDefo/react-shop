@@ -8,7 +8,26 @@ export function Home({
                          onChangeSearchInput,
                          onAddToCart,
                          onAddFavorite,
+                         isLoading
                      }) {
+
+    const rendreItems = () => {
+
+        const filtredItems = items.filter((obj) => obj.name.toLowerCase().includes(searchValue));
+        return (isLoading ? [...Array(10)] : filtredItems)
+            .map((obj, index) => (
+                <Card
+                    key={index}
+                    onPlus={(item) => onAddToCart(item)}
+                    onFavorite={(obj) => onAddFavorite(obj)}
+                    loading={isLoading}
+                    {...obj}
+                />
+
+            ))
+
+    }
+
     return (
         <div className="content p-40">
             <div className="d-flex align-center justify-between mb-40">
@@ -16,23 +35,14 @@ export function Home({
                 <div className="search-block d-flex">
                     <img src="/img/search.svg" alt="Search"/>
                     {searchValue &&
-                    <img onClick={() => setSearchValue('')} className="clear cu-p" src="/img/btn-remove.svg"
-                         alt="Clear"/>}
+                        <img onClick={() => setSearchValue('')} className="clear cu-p" src="/img/btn-remove.svg"
+                             alt="Clear"/>}
                     <input onChange={onChangeSearchInput} value={searchValue} placeholder="Поиск..."/>
                 </div>
             </div>
 
             <div className="d-flex flex-wrap">
-                {items
-                    .filter((obj) => obj.name.toLowerCase().includes(searchValue))
-                    .map((obj, index) => (
-                        <Card
-                            key={index}
-                            onPlus={(item) => onAddToCart(item)}
-                            onFavorite={(obj) => onAddFavorite(obj)}
-                            {...obj}
-                        />
-                    ))}
+                {rendreItems()}
             </div>
         </div>
     );
