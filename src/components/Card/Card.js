@@ -38,9 +38,9 @@ export function Card({id, name, imageUrl, price, onFavorite, onPlus, favorited=f
             </ContentLoader>
                 :
                 <>
-                <div className={cardStyles.favorite} onClick={onClickFavorite}>
-                    <img src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked" />
-                </div>
+                    {onFavorite &&  (<div className={cardStyles.favorite} onClick={onClickFavorite}>
+                        <img src={isFavorite ? "/img/liked.svg" : "/img/unliked.svg"} alt="Unliked"/>
+                    </div>)}
                 <img width={133} height={112} src={imageUrl} alt="Sneakers"  alt="sneakers"/>
                 <h5>{name}</h5>
                 <div className="d-flex justify-between align-center">
@@ -48,10 +48,10 @@ export function Card({id, name, imageUrl, price, onFavorite, onPlus, favorited=f
                 <span>Цена:</span>
                 <b>{price} рубасов</b>
                 </div>
-                <img
-                className={cardStyles.plus}
-                src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/plus.svg"}
-                alt="Plus"onClick={onAdd}/>
+                    {onPlus && (<img
+                        className={cardStyles.plus}
+                        src={isItemAdded(id) ? "/img/btn-checked.svg" : "/img/plus.svg"}
+                        alt="Plus" onClick={onAdd}/>)}
                 </div>
                 </>
             }

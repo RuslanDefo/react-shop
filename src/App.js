@@ -6,6 +6,7 @@ import {Favorites} from './pages/Favorites';
 import React from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import AppContext from "./context";
+import {Orders} from "./pages/Orders";
 
 function App() {
     let [items, setItems] = React.useState([]);
@@ -73,7 +74,7 @@ function App() {
     }
 
     return (
-        <AppContext.Provider value={{cartItems, favorites, items, isItemAdded, onAddFavorite}}>
+        <AppContext.Provider value={{cartItems, favorites, items, isItemAdded, onAddFavorite, setCartOpened, setCartItems, onAddToCart}}>
         <div className="wrapper clear">
             {cartOpened ? <Drawer
                     onClose={() => setCartOpened(false)}
@@ -100,6 +101,9 @@ function App() {
                 </Route>
                 <Route path="/favorites" exact
                        element={<Favorites/>}> </Route>
+
+                <Route path="/orders" exact
+                       element={<Orders/>}> </Route>
             </Routes>
 
 
